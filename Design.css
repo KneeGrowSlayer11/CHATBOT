@@ -1,0 +1,201 @@
+body {
+  font-family: 'Poppins', sans-serif;
+   background-color: #a0522d;
+  background-image: url(https://i.pinimg.com/originals/d8/c6/4b/d8c64b72093b66aa41751ad5a52a2e1d.gif);
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.chat-container {
+  width: 800px;
+  height: 800px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: #fff; /* inside area */
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+.chat-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 6px; /* border thickness */
+  background: linear-gradient(90deg, #a0522d, #d2b48c, #fff8e7, #ffffff, #a0522d);
+  background-size: 200% 200%;
+  animation: borderColorShift 8s ease-in-out infinite;
+
+  mask: 
+    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@keyframes borderColorShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.chat-header {
+  background-color: khaki;
+  background-image: url(https://i.pinimg.com/736x/85/67/c3/8567c3c62ea361875e556886bc1a8270.jpg);
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  padding: 25px 0;
+
+}
+.chat-header img {
+  width: 90px;          /* adjust size as desired */
+  height: 90px;
+  border-radius: 50%;   /* makes it circular */
+  object-fit: cover;    /* keeps proportions correct */
+  margin-bottom: 2px;  /* spacing before the title */
+  border: 3px solid #a0522d; /* optional accent border */
+}
+
+.chat-header h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.chat-header p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.chat-box {
+  background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+  flex: 1;
+  background-attachment: fixed;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+.bot-message,
+.user-message {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 12px 18px;
+  border-radius: 12px;
+  max-width: 70%;
+  word-break: break-word;
+}
+
+.bot-message {
+  background-color: white;
+  align-self: flex-start;
+  color: rgb(104, 45, 6);
+  border: #a0522d 2px solid;
+}
+
+.user-message {
+  background-color: white;
+  align-self: flex-end;
+  color: rgb(104, 45, 6);
+  border: #a0522d 2px solid;
+}
+
+.chat-input {
+  background-color: #F5EFE6;
+  border-top: 1px solid #2d2d4f;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: white;
+  color: black;
+  font-size: 14px;
+}
+
+.chat-input button {
+  margin-left: 10px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 20px;
+  background: rgb(104, 45, 6);
+  background-image: url(https://i.pinimg.com/originals/c6/c0/22/c6c0226cba843438117cde3d8910d79a.gif);
+  background-position: center;
+  background-size: cover;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.chat-input button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.chat-box::-webkit-scrollbar {
+  width: 6px;
+}
+.chat-box::-webkit-scrollbar-thumb {
+  background: rgb(104, 45, 6);
+  border-radius: 10px;
+}
+
+/* Thinking Animation */
+.loading-text {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-style: italic;
+  color: rgb(104, 45, 6);
+}
+
+.loading-text span {
+  animation: blink 1.2s infinite;
+}
+
+.loading-text .dot1 { animation-delay: 0s; }
+.loading-text .dot2 { animation-delay: 0.2s; }
+.loading-text .dot3 { animation-delay: 0.4s; }
+
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0.3; transform: translateY(0px); }
+  40% { opacity: 1; transform: translateY(-3px); }
+}
+@keyframes snakeBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
